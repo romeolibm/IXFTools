@@ -1,0 +1,332 @@
+Start processing with arguments: {'cmd': 'info', 'outfmt': 'csv', 'lobFolder': '../inst', 'outputEncoding': None, 'ouputLobStrategy': 'detached', 'trace': True, 'fromRow': None, 'maxRows': None, 'in': '../inst/blobs_ixf_lobfile.ixf', 'out': None}
+Start processing input from: ../inst/blobs_ixf_lobfile.ixf 
+ using parser: <__main__.IXFParserGetFileInfo object at 0x1029883a0>
+Reading from: ../inst/blobs_ixf_lobfile.ixf
+WARNING! No code page found the IXF records, using the default: 01200
+H: [b'IXF', b'0002', b'DB2    02.00', b'20240208', b'112514', b'00006', b'01208', b'01200', b'  ']
+Parsing record with parser: <bound method IXFParser.parseHeaderIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+WARNING! No code page found the IXF records, using the default: 01200
+T: [b'021', b'blobs_ixf_lobfile.ixf                                                                                                                                                                                                                                           ', b'000', b'                                                                                                                                                                                                                                                                ', b'            ', b'C', b'M', b'PC   ', b'I', b'00004', b'  ', b'\x00                             ', b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00']
+Parsing record with parser: <bound method IXFParser.parseTableDefIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+A: [b'DB2    02.00', b'A20240208112514\x00\x00SQLCA   \x88\x00\x00\x00Pm\x00\x00\x01\x002\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00SQLUEIWBm\x00\x15\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00W               ']
+Parsing record with parser: <bound method IXFParser.parseAppIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+A: [b'DB2    02.00', b'S20240208112514000000Y001                              001                              0000000020001                              002147483647                     NN000\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00']
+Parsing record with parser: <bound method IXFParser.parseAppIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+C: [b'005', b'LOBNO                                                                                                                                                                                                                                                           ', b'N', b'N', b'Y', b'01', b'R', b'496', b'00000', b'00000', b'     ', b'001', b'000001', b'                              ', b'00000000000000000000', b'000', b'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'000', b'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'0', b'00', b'0000000000']
+Parsing record with parser: <bound method IXFParser.parseColumnDefIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+C: [b'004', b'TEXT                                                                                                                                                                                                                                                            ', b'Y', b'N', b'Y', b'N\x00', b'R', b'964', b'01208', b'00000', b'00289', b'001', b'000005', b'                              ', b'00000000001073741824', b'000', b'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'000', b'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'0', b'00', b'0000000000']
+Parsing record with parser: <bound method IXFParser.parseColumnDefIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+C: [b'004', b'DATA                                                                                                                                                                                                                                                            ', b'Y', b'N', b'Y', b'N\x00', b'R', b'960', b'00000', b'00000', b'00289', b'002', b'000001', b'                              ', b'00000000001073741824', b'000', b'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'000', b'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'0', b'00', b'0000000000']
+Parsing record with parser: <bound method IXFParser.parseColumnDefIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+C: [b'008', b'XML_DATA                                                                                                                                                                                                                                                        ', b'Y', b'N', b'Y', b'N\x00', b'R', b'988', b'00000', b'00000', b'06226', b'003', b'000001', b'                              ', b'00000000000000000000', b'000', b'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'000', b'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', b'0', b'00', b'0000000000']
+Parsing record with parser: <bound method IXFParser.parseColumnDefIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+D: [b'001', b'    ', b'\x01\x00\x00\x00\x00\x00blob_file.001.lob.0.11/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+New table definition received: {
+ "colRecordCount": 4,
+ "columns": [
+  {
+   "cid": 1,
+   "colDataClass": "R",
+   "colno": 0,
+   "data_len": 0,
+   "dbcodepage": null,
+   "defaultValue": "",
+   "description": null,
+   "dimensionSizes": null,
+   "hasdefault": "N",
+   "lob_len": 0,
+   "name": "LOBNO",
+   "nullable": "N",
+   "numDimensions": 0,
+   "pkpos": "01",
+   "pos": 1,
+   "refType": "0",
+   "sbcodepage": null,
+   "selected": "Y",
+   "type": "496",
+   "typeName": "INTEGER",
+   "udt": ""
+  },
+  {
+   "cid": 1,
+   "colDataClass": "R",
+   "colno": 1,
+   "data_len": 289,
+   "dbcodepage": null,
+   "defaultValue": "",
+   "description": null,
+   "dimensionSizes": null,
+   "hasdefault": "N",
+   "lob_len": 1073741824,
+   "name": "TEXT",
+   "nullable": "Y",
+   "numDimensions": 0,
+   "pkpos": null,
+   "pos": 5,
+   "refType": "0",
+   "sbcodepage": "01208",
+   "selected": "Y",
+   "type": "964",
+   "typeName": "CLOB_LOCATION_SPECIFIER ",
+   "udt": ""
+  },
+  {
+   "cid": 2,
+   "colDataClass": "R",
+   "colno": 2,
+   "data_len": 289,
+   "dbcodepage": null,
+   "defaultValue": "",
+   "description": null,
+   "dimensionSizes": null,
+   "hasdefault": "N",
+   "lob_len": 1073741824,
+   "name": "DATA",
+   "nullable": "Y",
+   "numDimensions": 0,
+   "pkpos": null,
+   "pos": 1,
+   "refType": "0",
+   "sbcodepage": null,
+   "selected": "Y",
+   "type": "960",
+   "typeName": "BLOB_LOCATION_SPECIFIER ",
+   "udt": ""
+  },
+  {
+   "cid": 3,
+   "colDataClass": "R",
+   "colno": 3,
+   "data_len": 6226,
+   "dbcodepage": null,
+   "defaultValue": "",
+   "description": null,
+   "dimensionSizes": null,
+   "hasdefault": "N",
+   "lob_len": 0,
+   "name": "XML_DATA",
+   "nullable": "Y",
+   "numDimensions": 0,
+   "pkpos": null,
+   "pos": 1,
+   "refType": "0",
+   "sbcodepage": null,
+   "selected": "Y",
+   "type": "988",
+   "typeName": "XML",
+   "udt": ""
+  }
+ ],
+ "dataConvention": "C",
+ "dataFormat": "M",
+ "dataLocation": "I",
+ "dataSource": "",
+ "description": null,
+ "machineFormat": "PC",
+ "name": "blobs_ixf_lobfile",
+ "pkName": null,
+ "qualifier": ""
+}
+Parsing column: 0  name: LOBNO  data: b'\x01\x00\x00\x00'  parser: <bound method IXFParser.parseDataInteger of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: 1 
+ prow: [None, None, None, None]
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',0,11,lobFolder='../inst',encoding='UTF-8')
+>>LOBLOC     : blob_file.001.lob.0.11
+Parsing column: 1  name: TEXT  data: b'\x00\x00blob_file.001.lob.0.11/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.0.11 
+ prow: [1, None, None, None]
+D: [b'002', b'    ', b'\x00\x00blob_file.001.lob.11.6/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',11,6,lobFolder='../inst')
+>>LOBLOC     : blob_file.001.lob.11.6
+Parsing column: 2  name: DATA  data: b'\x00\x00blob_file.001.lob.11.6/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.11.6 
+ prow: [1, LobLocator('blob_file.001.lob',0,11,lobFolder='../inst',encoding='UTF-8'), None, None]
+D: [b'003', b'    ', b"\x00\x00/\x00<XDS FIL='xml_file.001.xml' OFF='0' LEN='58' />"]
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>XMLLOC_repr: LobLocator('xml_file.001.xml',0,58,lobFolder='../inst',encoding='UTF-8')
+Parsing column: 3  name: XML_DATA  data: b"<XDS FIL='xml_file.001.xml' OFF='0' LEN='58' />"  parser: <bound method IXFParser.parseDataXML of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: xml_file.001.xml.0.58 
+ prow: [1, LobLocator('blob_file.001.lob',0,11,lobFolder='../inst',encoding='UTF-8'), LobLocator('blob_file.001.lob',11,6,lobFolder='../inst'), None]
+D: [b'001', b'    ', b'\x02\x00\x00\x00\x00\x00blob_file.001.lob.17.12000/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+Parsing column: 0  name: LOBNO  data: b'\x02\x00\x00\x00'  parser: <bound method IXFParser.parseDataInteger of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: 2 
+ prow: [None, None, None, None]
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',17,12000,lobFolder='../inst',encoding='UTF-8')
+>>LOBLOC     : blob_file.001.lob.17.12000
+Parsing column: 1  name: TEXT  data: b'\x00\x00blob_file.001.lob.17.12000/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.17.12000 
+ prow: [2, None, None, None]
+D: [b'002', b'    ', b'\x00\x00blob_file.001.lob.12017.6000/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',12017,6000,lobFolder='../inst')
+>>LOBLOC     : blob_file.001.lob.12017.6000
+Parsing column: 2  name: DATA  data: b'\x00\x00blob_file.001.lob.12017.6000/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.12017.6000 
+ prow: [2, LobLocator('blob_file.001.lob',17,12000,lobFolder='../inst',encoding='UTF-8'), None, None]
+D: [b'003', b'    ', b"\x00\x002\x00<XDS FIL='xml_file.001.xml' OFF='58' LEN='1048' />"]
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>XMLLOC_repr: LobLocator('xml_file.001.xml',58,1048,lobFolder='../inst',encoding='UTF-8')
+Parsing column: 3  name: XML_DATA  data: b"<XDS FIL='xml_file.001.xml' OFF='58' LEN='1048' />"  parser: <bound method IXFParser.parseDataXML of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: xml_file.001.xml.58.1048 
+ prow: [2, LobLocator('blob_file.001.lob',17,12000,lobFolder='../inst',encoding='UTF-8'), LobLocator('blob_file.001.lob',12017,6000,lobFolder='../inst'), None]
+D: [b'001', b'    ', b'\x03\x00\x00\x00\x00\x00blob_file.001.lob.18017.13000/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+Parsing column: 0  name: LOBNO  data: b'\x03\x00\x00\x00'  parser: <bound method IXFParser.parseDataInteger of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: 3 
+ prow: [None, None, None, None]
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',18017,13000,lobFolder='../inst',encoding='UTF-8')
+>>LOBLOC     : blob_file.001.lob.18017.13000
+Parsing column: 1  name: TEXT  data: b'\x00\x00blob_file.001.lob.18017.13000/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.18017.13000 
+ prow: [3, None, None, None]
+D: [b'002', b'    ', b'\x00\x00blob_file.001.lob.31017.8000/']
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>LOBLOC_repr: LobLocator('blob_file.001.lob',31017,8000,lobFolder='../inst')
+>>LOBLOC     : blob_file.001.lob.31017.8000
+Parsing column: 2  name: DATA  data: b'\x00\x00blob_file.001.lob.31017.8000/'  parser: <bound method IXFParser.parseDataLob of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: blob_file.001.lob.31017.8000 
+ prow: [3, LobLocator('blob_file.001.lob',18017,13000,lobFolder='../inst',encoding='UTF-8'), None, None]
+D: [b'003', b'    ', b"\x00\x004\x00<XDS FIL='xml_file.001.xml' OFF='1106' LEN='1148' />"]
+Parsing record with parser: <bound method IXFParser.parseRowDataIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+>>XMLLOC_repr: LobLocator('xml_file.001.xml',1106,1148,lobFolder='../inst',encoding='UTF-8')
+Parsing column: 3  name: XML_DATA  data: b"<XDS FIL='xml_file.001.xml' OFF='1106' LEN='1148' />"  parser: <bound method IXFParser.parseDataXML of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>  parsedValue: xml_file.001.xml.1106.1148 
+ prow: [3, LobLocator('blob_file.001.lob',18017,13000,lobFolder='../inst',encoding='UTF-8'), LobLocator('blob_file.001.lob',31017,8000,lobFolder='../inst'), None]
+A: [b'DB2    02.00', b'E20240208112514']
+Parsing record with parser: <bound method IXFParser.parseAppIXFRecord of <__main__.IXFParserGetFileInfo object at 0x1029883a0>>
+
+IXFHeader:
+{'dbcodepage': '01200',
+ 'headingRowcount': (6,),
+ 'ixfid': 'IXF',
+ 'product': 'DB2    02.00',
+ 'sbcodepage': '01208',
+ 'version': '0002',
+ 'writtenDate': '20240208',
+ 'writtenTime': '112514'}
+A-Records:
+[{'IXFACTYP': 'A',
+  'IXFADATE': '20240208',
+  'IXFASLCA': b'\x00\x00SQLCA   \x88\x00\x00\x00Pm\x00\x00\x01\x002\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00SQLUEIWBm\x00\x15\x80\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+              b'\x00\x00\x00\x00\x00\x00W             ',
+  'IXFATIME': '112514'},
+ {'IXFACACH': '0000000020',
+  'IXFACOLN': '000000',
+  'IXFACTYP': 'S',
+  'IXFACYCL': 'N',
+  'IXFADATE': '20240208',
+  'IXFAINCR': '001                              ',
+  'IXFAITYP': 'Y',
+  'IXFAMAXV': '002147483647                     ',
+  'IXFAMINV': '001                              ',
+  'IXFAORDR': 'N',
+  'IXFARMRK': '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
+  'IXFARMRL': '000',
+  'IXFASTRT': '001                              ',
+  'IXFATIME': '112514'},
+ {'IXFACTYP': 'E', 'IXFADATE': '20240208', 'IXFATIME': '112514'}]
+TableDescriptor:
+{'colRecordCount': 4,
+ 'columns': [{'cid': 1,
+              'colDataClass': 'R',
+              'colno': 0,
+              'data_len': 0,
+              'dbcodepage': None,
+              'defaultValue': '',
+              'description': None,
+              'dimensionSizes': None,
+              'hasdefault': 'N',
+              'lob_len': 0,
+              'name': 'LOBNO',
+              'nullable': 'N',
+              'numDimensions': 0,
+              'pkpos': '01',
+              'pos': 1,
+              'refType': '0',
+              'sbcodepage': None,
+              'selected': 'Y',
+              'type': '496',
+              'typeName': 'INTEGER',
+              'udt': ''},
+             {'cid': 1,
+              'colDataClass': 'R',
+              'colno': 1,
+              'data_len': 289,
+              'dbcodepage': None,
+              'defaultValue': '',
+              'description': None,
+              'dimensionSizes': None,
+              'hasdefault': 'N',
+              'lob_len': 1073741824,
+              'name': 'TEXT',
+              'nullable': 'Y',
+              'numDimensions': 0,
+              'pkpos': None,
+              'pos': 5,
+              'refType': '0',
+              'sbcodepage': '01208',
+              'selected': 'Y',
+              'type': '964',
+              'typeName': 'CLOB_LOCATION_SPECIFIER ',
+              'udt': ''},
+             {'cid': 2,
+              'colDataClass': 'R',
+              'colno': 2,
+              'data_len': 289,
+              'dbcodepage': None,
+              'defaultValue': '',
+              'description': None,
+              'dimensionSizes': None,
+              'hasdefault': 'N',
+              'lob_len': 1073741824,
+              'name': 'DATA',
+              'nullable': 'Y',
+              'numDimensions': 0,
+              'pkpos': None,
+              'pos': 1,
+              'refType': '0',
+              'sbcodepage': None,
+              'selected': 'Y',
+              'type': '960',
+              'typeName': 'BLOB_LOCATION_SPECIFIER ',
+              'udt': ''},
+             {'cid': 3,
+              'colDataClass': 'R',
+              'colno': 3,
+              'data_len': 6226,
+              'dbcodepage': None,
+              'defaultValue': '',
+              'description': None,
+              'dimensionSizes': None,
+              'hasdefault': 'N',
+              'lob_len': 0,
+              'name': 'XML_DATA',
+              'nullable': 'Y',
+              'numDimensions': 0,
+              'pkpos': None,
+              'pos': 1,
+              'refType': '0',
+              'sbcodepage': None,
+              'selected': 'Y',
+              'type': '988',
+              'typeName': 'XML',
+              'udt': ''}],
+ 'dataConvention': 'C',
+ 'dataFormat': 'M',
+ 'dataLocation': 'I',
+ 'dataSource': '',
+ 'description': None,
+ 'machineFormat': 'PC',
+ 'name': 'blobs_ixf_lobfile',
+ 'pkName': None,
+ 'qualifier': ''}
+Table   Name: blobs_ixf_lobfile
+Column count: 4
+Lobs    size: 41271
+Lob    count: 0
+Row    count: 2
+Processing time(sec): 0.0005409717559814453

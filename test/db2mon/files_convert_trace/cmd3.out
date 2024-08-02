@@ -1,0 +1,95 @@
+Start processing with arguments: {'cmd': 'convert', 'outfmt': 'csv', 'lobFolder': '../db2mon_snap_hostname_db2inst1_DBNAME_TS', 'outputEncoding': None, 'ouputLobStrategy': 'detached', 'trace': False, 'fromRow': None, 'maxRows': None, 'in': '../db2mon_snap_hostname_db2inst1_DBNAME_TS/mon_get_table.ixf', 'out': 'testOutput'}
+Writing to file: /Users/romeolupascu/github/romeolibm/IXFTools/test/db2mon/files_convert_trace/testOutput/mon_get_table.csv
+Start processing input from: ../db2mon_snap_hostname_db2inst1_DBNAME_TS/mon_get_table.ixf 
+ using parser: <__main__.IXFParserWriteCsv object at 0x1006dc370>
+Writing data to: /Users/romeolupascu/github/romeolibm/IXFTools/test/db2mon/files_convert_trace/testOutput/mon_get_table.csv
+Reading from: ../db2mon_snap_hostname_db2inst1_DBNAME_TS/mon_get_table.ixf
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+parseDataVarLen:error: 'utf-8' codec can't decode byte 0xff in position 21: invalid start byte
+Table   Name: mon_get_table
+Column count: 88
+Lobs    size: 0
+Lob    count: 0
+Row    count: 82
+Processing time(sec): 0.008708953857421875

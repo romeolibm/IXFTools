@@ -1,0 +1,12 @@
+Start processing with arguments: {'cmd': 'convert', 'outfmt': 'csv', 'lobFolder': '../inst', 'outputEncoding': None, 'ouputLobStrategy': 'detached', 'trace': False, 'fromRow': None, 'maxRows': None, 'in': '../inst/syscat.tables.ixf', 'out': '.'}
+Writing to file: /Users/romeolupascu/github/romeolibm/IXFTools/test/syscat_exports/cmd_convert/syscat.tables.csv
+Start processing input from: ../inst/syscat.tables.ixf 
+ using parser: <__main__.IXFParserWriteCsv object at 0x104b5c370>
+Writing data to: /Users/romeolupascu/github/romeolibm/IXFTools/test/syscat_exports/cmd_convert/syscat.tables.csv
+Reading from: ../inst/syscat.tables.ixf
+Table   Name: syscattables
+Column count: 85
+Lobs    size: 0
+Lob    count: 0
+Row    count: 431
+Processing time(sec): 0.05193614959716797

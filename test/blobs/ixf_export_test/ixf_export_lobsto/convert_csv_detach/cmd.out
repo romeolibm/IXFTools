@@ -1,0 +1,12 @@
+Start processing with arguments: {'cmd': 'convert', 'outfmt': 'csv', 'lobFolder': '../inst', 'outputEncoding': None, 'ouputLobStrategy': 'detached', 'trace': False, 'fromRow': None, 'maxRows': None, 'in': '../inst/blobs_ixf_lobs_to_blob_dir.ixf', 'out': '.'}
+Writing to file: /Users/romeolupascu/github/romeolibm/IXFTools/test/blobs/ixf_export_test/ixf_export_lobsto/convert_csv_detach/blobs_ixf_lobs_to_blob_dir.csv
+Start processing input from: ../inst/blobs_ixf_lobs_to_blob_dir.ixf 
+ using parser: <__main__.IXFParserWriteCsv object at 0x100e14370>
+Writing data to: /Users/romeolupascu/github/romeolibm/IXFTools/test/blobs/ixf_export_test/ixf_export_lobsto/convert_csv_detach/blobs_ixf_lobs_to_blob_dir.csv
+Reading from: ../inst/blobs_ixf_lobs_to_blob_dir.ixf
+Table   Name: blobs_ixf_lobs_to_blob_dir
+Column count: 4
+Lobs    size: 41271
+Lob    count: 6
+Row    count: 2
+Processing time(sec): 0.0019190311431884766
