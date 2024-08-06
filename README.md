@@ -35,8 +35,7 @@ The converted files are in testOutput or in the same folder as exec_test.sh.
 The input files (.ixf and lobs) are in ../inst folders from the exec_test.sh folder
 
 # Known issues
-1. batch processing has troubles so please only use one file at the time conversion or info (scannig). If you need batch simply automate with a shell script. I'll fix this when I'll get the time.
-2. Please see the encoding warning at the top of this doc
+1. Please see the encoding warning at the top of this doc
 
 # Usage examples
 ## get help on accepted parameters
@@ -56,11 +55,79 @@ Syntax:
     outfmt - output format, can be csv or json default csv
     otputLobStrategy - what to do with the lob data, by default is 'detached'
           where each lob is written to a single file (this is default and only one
-          supprted in this version)
+          supported in this version)
     fromRow - if provided allows for skipping a number of rows before start processing
     maxRows - if provided can help limit the number of rows processed 
+    columns - a comma separated list of numbers (column index 1 based) or column names
+              default None meaning all columns are output, if a list exists then only the
+              provided column/col-index will be output when converting
+    filter  - a list of constants to be used to filter rows or a path to a python module
+              that has to provide a function called 'acceptrow' accepting a single parameter
+              the row to be filtered and returns True if the row is to be 
+              accepted for processing or False if not
     trace - y|n if y then additional information about ixf records will be output on stderr
 ```
+## Basic IXF to CSV conversion using colum selection, row filtering by python logic fromRow and maxRows
+```
+echo Revealing the test code and filter code > /dev/null
+cat test/syscat_exports/cmd_rowcol_filter/exec_test.sh
+#!/bin/bash
+../../../src/IXFTools.py \
+ cmd=convert \
+ in=../inst/syscat.tables.ixf \
+ out=. \
+ fromRow=1 \
+ maxRows=10 \
+ trace=n \
+ columns=1,2,6,5 \
+ filter=./myrowfilter.py \
+ > cmd.out 2> cmd.err
+
+cat test/syscat_exports/cmd_rowcol_filter/myrowfilter.py
+def rowfilter(row):
+  return row[1] == 'SYSVIEWS'
+
+echo Executing the test > /dev/null
+bash ./test/syscat_exports/cmd_rowcol_filter/exec_test.sh
+
+echo Revealign produced output > /dev/null
+cat ./test/syscat_exports/cmd_rowcol_filter/cmd.err
+Start processing with arguments:
+cmd = 'convert'
+outfmt = 'csv'
+lobFolder = '../inst'
+outputEncoding = None
+ouputLobStrategy = 'detached'
+trace = False
+fromRow = '1'
+maxRows = '10'
+columns = '1,2,6,5'
+filter = './myrowfilter.py'
+in = '../inst/syscat.tables.ixf'
+out = '.'
+Writing to file: /Users/romeolupascu/github/romeolibm/IXFTools/test/syscat_exports/cmd_rowcol_filter/syscat.tables.csv
+Using row filter from file: <function rowfilter at 0x10461ee50>
+Output= <_io.TextIOWrapper name='/Users/romeolupascu/github/romeolibm/IXFTools/test/syscat_exports/cmd_rowcol_filter/syscat.tables.csv' mode='wt' encoding='UTF-8'>
+Start processing input from: ../inst/syscat.tables.ixf 
+ using parser: <__main__.IXFParserWriteCsv object at 0x10461f460>
+Writing data to: /Users/romeolupascu/github/romeolibm/IXFTools/test/syscat_exports/cmd_rowcol_filter/syscat.tables.csv
+Reading from: ../inst/syscat.tables.ixf
+Using column filter: [1, 2, 6, 5]
+Table   Name: syscattables
+Column count: 85
+Lobs    size: 0
+Lob    count: 0
+Row    count: 10
+Row filtered: 9
+Processing time(sec): 0.0024340152740478516
+
+cat ./test/syscat_exports/cmd_rowcol_filter/
+TABSCHEMA,TABNAME,STATUS,TYPE
+VARCHAR,VARCHAR,CHAR,CHAR
+SYSIBM  ,SYSVIEWS,N,T
+
+```
+
 ## Basic use case: extract information from a .ixf (table structure, row count, etc) no conversion executed in the PWD
 ```
 IXFTools.py info 
