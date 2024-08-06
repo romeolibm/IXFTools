@@ -249,7 +249,7 @@ DB2 SQLCA RECORD (RT=A+A)
    IXFASLCA       136-BYTE  variable    sqlca - SQL communications area
 
 """
-import os,sys,json,csv,struct,time,traceback,logging, pprint
+import os,sys,json,csv,struct,time,traceback,logging, pprint, types
 
 def readFilePart(fn,offset,read_len,lobFolder=None,trace=False):
     """
@@ -465,6 +465,7 @@ class IXFParser:
         self.totalDataSize=0
         self.totalLobSize=0
         self.totalLobCount=0
+        self.filteredRowCount=0
         self.minLobSize=-1
         self.maxLobSize=-1
         self.traceRecords=args.get('trace',False)
@@ -474,8 +475,30 @@ class IXFParser:
         self.csvwriter=None
         self.fromRow=args.get('fromRow','-1')
         self.maxRows=args.get('maxRows','-1')
-        self.fromRow=-1 if self.fromRow is None else int(self.fromRow)
+        self.fromRow=0 if self.fromRow is None else int(self.fromRow)
         self.maxRows=-1 if self.maxRows is None else int(self.maxRows)
+        self.outputColumns=args.get("columns",None)
+        if self.outputColumns:
+            self.outputColumns=self.outputColumns.split(',')
+        self.rowFilter=args.get("filter",None)
+        if self.rowFilter:
+            if os.path.isfile(self.rowFilter):
+                try:
+                    globs={}
+                    with open(self.rowFilter,'rt') as fin:
+                        exec(fin.read(),globs)
+                    f=globs.get('rowfilter',None)
+                    if not f:
+                        print("Your row filter module does not contain a function called rowfilter !",file=sys.stderr)
+                        sys.exit(1)
+                    if type(f) != types.FunctionType:
+                        print("Your row filter object called rowfilter is not a function!",file=sys.stderr)
+                        sys.exit(1)
+                    self.rowFilter=f
+                    print("Using row filter from file:",self.rowFilter,file=sys.stderr)
+                except Exception as x:
+                    traceback.print_exc(file=sys.stderr)
+                    sys.exit(1)
         
         # bind all record parsers to methods of this class
         for k in self.recordTypes:
@@ -494,7 +517,18 @@ class IXFParser:
                 td['parser']=getattr(self, pn,self.parseDataRaw)
             # if self.traceRecords:
             #     print("Data type:",k," Using parser=",td['parser'],file=sys.stderr)
-            
+    
+    def acceptCurrentRow(self):
+        if self.rowFilter:
+            try:
+                ar=self.rowFilter(self.currentRow)
+                if not ar:
+                    self.filteredRowCount+=1
+                return ar
+            except Exception as x:
+                traceback.print_exc(file=sys.stderr)
+        return True
+    
     def onTableDef(self):
         """
         Override in the derived class  
@@ -502,12 +536,43 @@ class IXFParser:
         At this point a SQL statement can be created or the column list 
         written to a csv file 
         """
-                
+        if self.outputColumns:
+            oc=[]
+            for cv in self.outputColumns:
+                try:
+                    cidx=int(cv)
+                    if cidx<1:
+                        print("Invalid column index (too small):",cidx,file=sys.stderr)
+                        sys.exit(1)
+                    if cidx> len(self.columns):
+                        print(
+                            "Invalid column index (too large):",cidx,
+                            " max:",len(self.columns)
+                        )
+                        sys.exit(1)
+                        
+                    oc.append(cidx-1)
+                except:
+                    found=False
+                    for cidx in range(len(self.columns)):
+                        if self.columns[cidx]['name']==cv:
+                            found=True
+                            oc.append(cidx)
+                            break
+                    if not found:
+                        print("Invalid column name:",cv,
+                              " known columns:",[x['name'] for x in self.columns],
+                        file=sys.stderr)
+                        sys.exit(1)
+            self.outputColumns=oc
+            print("Using column filter:",[x+1 for x in self.outputColumns],file=sys.stderr)
+            
     def onRowReceived(self):
         """
         Override in the derived class  
         Process a data row if an output was defined
         """
+        return self.acceptCurrentRow()
         
     def onLastRecord(self):
         """
@@ -533,8 +598,9 @@ class IXFParser:
             print("New table definition received:",
                   json.dumps(self.tableDef,indent=' ',sort_keys=True),
                   file=sys.stderr
-            )
-              
+            ) 
+        self.onTableDef()
+        
     def getColset(self,cid):
         return self.colcidmap.get(cid)
     
@@ -596,7 +662,7 @@ class IXFParser:
             ext='.txt'
         elif lt == '988':
             ext='.xml'
-        return tn+"_"+cn+"_"+str(self.rowCount)+ext 
+        return tn+"_"+cn+"_"+str(self.rowNum)+ext 
     
     def isLobType(self,lobColIdx):
         """
@@ -1047,6 +1113,7 @@ class IXFParser:
         
     def parseRowDataIXFRecord(self,rdtitms):
         """
+        Called for each 'D' record in the IXF file
         DATA RECORD (RT=D)
      
        FIELD NAME     LENGTH    TYPE        COMMENTS
@@ -1065,8 +1132,13 @@ class IXFParser:
         
         if colno==1:
             if not self.currentRow is None:
-                self.onRowReceived()
-                self.rowCount+=1
+                self.rowNum+=1
+                if self.rowNum < self.fromRow:
+                    if self.traceRecords:
+                        print(">>> Skipping beginning row!",file=sys.stderr)
+                else:
+                    self.onRowReceived()
+                    self.rowCount+=1
             self.currentRow=[None]*self.columnCount
         
         self.parseColumnsForField(colno,rdtitms[2])
@@ -1216,10 +1288,12 @@ class IXFParser:
         Return a piece of identity to be placed in the csv record (for example).
         """
         if self.output is None:
-            print(">>> Skip lob output for self.output is None",file=sys.stderr)
+            if self.traceRecords:
+                print(">>> Skip lob output for self.output is None",file=sys.stderr)
             return
         if type(self.outObj) != str:
-            print(">>> Skip lob output for self.outObj type is:",type(self.outObj),file=sys.stderr)
+            if self.traceRecords:
+                print(">>> Skip lob output for self.outObj type is:",type(self.outObj),file=sys.stderr)
             return
         
         fn=self.getExternalLobIdentifier(cidx)
@@ -1300,7 +1374,7 @@ class IXFParser:
             recParser(rdtitms)
         except Exception as x:
             #self.currentRow=None
-            traceback.print_exc(file=sys.stdout)
+            traceback.print_exc(file=sys.stderr)
         
         return True
     
@@ -1323,6 +1397,7 @@ class IXFParser:
         self.columns=[]
         self.columnCount=0
         self.rowCount=0
+        self.rowNum=0
         self.totalDataSize=0
         self.totalLobSize=0
         self.minLobSize=-1
@@ -1353,10 +1428,17 @@ class IXFParserWriteCsv(IXFParser):
         At this point a SQL statement can be created or the column list 
         written to a csv file 
         """
+        IXFParser.onTableDef(self)
         if self.csvwriter:
             colnames=[]
             coltypes=[]
-            for cd in self.columns:
+            if self.outputColumns:
+                colist=self.outputColumns
+            else:
+                colist=range(len(self.columns))
+            
+            for cidx in colist:
+                cd=self.columns[cidx]
                 colnames.append(cd['name'])
                 coltypes.append(self.typeInfo[cd['type']]['name']) # TODO: finish impl
                 
@@ -1367,21 +1449,30 @@ class IXFParserWriteCsv(IXFParser):
         """
         Process a data row if an output was defined
         """
-        if self.fromRow>0:
-            if self.rowCount<self.fromRow:
-                print("Skipping beginning row!",file=sys.stderr)
-                return # skip rows output if required
         #print("self.tableDef",self.tableDef,file=sys.stderr)
         if self.traceRecords:
-            print(">>> Final-Row[",self.rowCount,"]=",repr(self.currentRow),file=sys.stderr)
+            print(">>> Row[",self.rowNum,"]=",repr(self.currentRow),file=sys.stderr)
+        
+        if not self.acceptCurrentRow():
+            if self.traceRecords:
+                print(">>> Filtering out rownum:",self.rowNum,file=sys.stderr)
+            return
+        
         for cidx in range(len(self.columns)):
             if self.isLobType(cidx):
                 nlv=self.handleLobObject(cidx)
                 self.currentRow[cidx]=nlv
         
+        if self.outputColumns:
+            r=[]
+            for cidx in self.outputColumns:
+                r.append(self.currentRow[cidx])
+        else:
+            r=self.currentRow
+            
         if self.csvwriter:          
             self.csvwriter.writerow(    
-                [repr(x) if type(x) == bytes else x for x in self.currentRow]
+                [repr(x) if type(x) == bytes else x for x in r]
             )
     
     def onLastRecord(self):
@@ -1397,6 +1488,7 @@ class IXFParserWriteCsv(IXFParser):
         if self.output:
             self.output.close()
         self.output=output
+        print("Output=",repr(self.output),file=sys.stderr)
         self.csvwriter=csv.writer(self.output)
         
 class IXFParserWriteJSON(IXFParser):
@@ -1411,6 +1503,7 @@ class IXFParserWriteJSON(IXFParser):
         """
         A json table is a list of records so we write a list start line
         """
+        IXFParser.onTableDef(self)
         print("[",file=self.output)
         
     def onRowReceived(self):
@@ -1418,7 +1511,7 @@ class IXFParserWriteJSON(IXFParser):
         Process a data row if an output was defined
         """
         if self.fromRow>0:
-            if self.rowCount<self.fromRow:
+            if self.rowNum<self.fromRow:
                 return # skip rows output if required
         
         for cidx in range(len(self.columns)):
@@ -1495,6 +1588,7 @@ class IXFParserGetFileInfo(IXFParser):
     def onTableDef(self):
         """
         """
+        IXFParser.onTableDef(self)
         if self.output:
             json.dump(self.tableDef, self.output)
      
@@ -1521,7 +1615,7 @@ def processSingleFile(cmd,inp,outp,**args):
     Process a single ixf file given an IXF instance processor
     a command and input output file paths.
     """
-    out=None
+    out=outp
     if cmd == 'convert':
         if type(outp) == str:
             outp=os.path.abspath(outp)
@@ -1579,6 +1673,8 @@ def processSingleFile(cmd,inp,outp,**args):
     print("Lobs    size:",ixfp.totalLobSize,file=sys.stderr)           
     print("Lob    count:",ixfp.totalLobCount,file=sys.stderr)
     print("Row    count:",ixfp.rowCount,file=sys.stderr)
+    print("Row filtered:",ixfp.filteredRowCount,file=sys.stderr)
+    
     print("Processing time(sec):",stop-start,file=sys.stderr)
    
 
@@ -1587,7 +1683,7 @@ def batchProcess(cmd,inp,outp=None,**args):
     Process a set of files as a batch.
     List file information/stats or convert to .csv.
     """
-    if (cmd == 'convert') and (outp is None):
+    if (cmd == 'convert') and ((outp is None) or (type(outp)!=str) or not os.path.isdir(outp)):
         raise Exception("Output path is not a folder!")
     
     print("Start processing folder:",inp,file=sys.stderr)
@@ -1621,9 +1717,16 @@ Syntax:
     outfmt - output format, can be csv or json default csv
     otputLobStrategy - what to do with the lob data, by default is 'detached'
           where each lob is written to a single file (this is default and only one
-          supprted in this version)
+          supported in this version)
     fromRow - if provided allows for skipping a number of rows before start processing
     maxRows - if provided can help limit the number of rows processed 
+    columns - a comma separated list of numbers (column index 1 based) or column names
+              default None meaning all columns are output, if a list exists then only the
+              provided column/col-index will be output when converting
+    filter  - a list of constants to be used to filter rows or a path to a python module
+              that has to provide a function called 'acceptrow' accepting a single parameter
+              the row to be filtered and returns True if the row is to be 
+              accepted for processing or False if not
     trace - y|n if y then additional information about ixf records will be output on stderr
         """,file=sys.stderr)
         return True
@@ -1637,6 +1740,8 @@ Syntax:
     args['trace'] = 'n'
     args['fromRow'] = None
     args['maxRows'] = None
+    args['columns'] = None
+    args['filter'] = None
     
     inp = None
     out = None
@@ -1704,7 +1809,9 @@ Syntax:
     
     args['in']=inp
     args['out']=out
-    print("Start processing with arguments:",args,file=sys.stderr)
+    print("Start processing with arguments:",file=sys.stderr)
+    for pn in args:
+        print(pn,'=',repr(args[pn]),file=sys.stderr)
     
     if (type(inp) != str) or not os.path.isdir(inp):
         processSingleFile(inp=inp,outp=out,**args)
